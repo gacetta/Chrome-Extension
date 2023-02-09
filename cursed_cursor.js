@@ -3,12 +3,27 @@ let ghostModeActive = false;
 const ghostLinks = [
   "https://y.yarn.co/7b228cf8-e86f-4421-a741-5d6442b70ffb_text.gif",
   "https://giphy.com/clips/christinaxingfilm-hoBxuTrmBcbu32CFHW",
-  "https://giphy.com/clips/halloween-happy-happyhalloween-k4Rymbn4WLkgKMtE2u",
   "https://giphy.com/gifs/cartoon-halloween-ghost-aTf4PONtSYB1e/fullscreen",
   "https://giphy.com/gifs/ghost-spirit-guide-very-scary-l0K4cAq6pn1jdbboI/fullscreen",
   "https://youtu.be/GKbB9n5p-qg?t=7",
-  "https://youtu.be/31j4DIpgY9U?t=47",
   "https://youtu.be/9gArvGIQHdU",
+  "https://ghost.org/",
+  "https://www.youtube.com/watch?v=d-MxKd1WY2k",
+  "https://giphy.com/gifs/ghostbustersmovies-ghostbusters-original-3o72FiLG37hUSMqW4M/fullscreen",
+  "https://www.logodesignlove.com/wp-content/uploads/2009/12/ghostbusters-logo-on-black.jpg",
+  "https://en.wikipedia.org/wiki/Ghost",
+  "https://www.youtube.com/watch?v=fuZTcOyGCRY",
+];
+const randomGhostLinkNumber = (arr) =>
+  Math.floor(Math.random() * (1 + (arr.length - 1)));
+
+const ghostImages = [
+  "https://www.elmers.com/on/demandware.static/-/Library-Sites-Library-elmersinternational/default/dw26a91148/Elmer%27s/01%20JAN/Featured%20Content/201669775-elmers_cheesecloth_ghosts_inline_01.jpeg",
+  "https://media.npr.org/assets/img/2017/10/18/ghost-story.jpg-7a2986c062f0a3d65ca25aed5dae223eed999602-s1100-c50.jpeg",
+  "https://media.npr.org/assets/img/2017/10/18/ghost-story.jpg-7a2986c062f0a3d65ca25aed5dae223eed999602-s1100-c50.jpeg",
+  "https://i.pinimg.com/736x/7a/1a/36/7a1a3699f8687e05494a928946fe8447.jpg",
+  "https://pbs.twimg.com/media/CwFeYD7VUAAa8Qp.jpg",
+  "https://www.logodesignlove.com/wp-content/uploads/2009/12/ghostbusters-logo-on-black.jpg",
 ];
 
 const button = document.createElement("button");
@@ -68,13 +83,13 @@ function ghostMode() {
   const pacmanEl = document.createElement("img");
   pacmanEl.id = "ghost";
   // set its attributes
-  pacmanEl.src =
-    "https://banner2.cleanpng.com/20180203/bqq/kisspng-pac-man-world-3-ghosts-clip-art-pac-man-ghost-png-transparent-image-5a7561ae2a7482.6496024615176421581739.jpg";
+  pacmanEl.src = chrome.runtime.getURL("pacman.png");
   pacmanEl.style.cssText = `
     position: absolute;
+    height: 50vh;
     left: -1000px;
-    top: 100px;
-    transition: all 10s;
+    top: 25vh;
+    transition: all 13s;
     filter: invert(100%);
   `;
   // append pacman to dom
@@ -94,9 +109,10 @@ function ghostMode() {
       color: transparent;
       background-color: transparent;
       transition: all 2s;
-      transform: scale(${Math.floor(Math.random() * (1 + 10 - 0.1)) + 0.1});
+      transform: scale(10);
+      // transform: scale(${Math.floor(Math.random() * (1 + 10 - 0.1)) + 0.1});
     `;
-      link.href = "https://youtu.be/GKbB9n5p-qg?t=7";
+      link.href = ghostLinks[randomGhostLinkNumber(ghostLinks)];
     });
   });
 }
