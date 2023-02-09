@@ -1,14 +1,6 @@
 // console.log("THERES A GHOST IN THE BACKGROUND");
 
 
-
-// chrome.runtime.onMessage.addListener(
-//   function(request, sender, sendResponse) {
-//     console.log( "Your question was: "  + request.myQuestion );
-
-//     sendResponse({state: "I don't know, but I'll find it out!"});
-//   });
-
 chrome.runtime.onMessage.addListener(function (
   message,
   sender,

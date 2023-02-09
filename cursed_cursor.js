@@ -31,13 +31,15 @@ button.addEventListener("click", () => {
   if (!ghostModeActive) {
     ghostMode();
     ghostModeActive = true;
-  } else {
+  } 
+  else {
     document.location.reload();
   }
 });
 // set position attributes
 button.style.cssText = `
   position: absolute;
+  font-family: 'Creepster', cursive;
   top: 0;
   right: 0;
   width: 100px;
@@ -76,7 +78,7 @@ function ghostMode() {
         images[index].src = data.link;
       }
     );
-    console.log("Looping through images");
+    // console.log("Looping through images");
   }
 
   // create new ghost image
@@ -116,7 +118,7 @@ function ghostMode() {
     });
   });
 }
-console.log('ghost mode is on!')
+// console.log('ghost mode is on!')
 // const css = 'a:hover{ transform: rotate(.5turn) translate(100%); }';
 // let style = document.createElement('style');
 
