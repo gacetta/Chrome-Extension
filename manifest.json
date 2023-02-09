@@ -5,7 +5,7 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "hello.html",
-    "default_icon": "panda.jpeg"
+    "default_icon": "panda.png"
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
