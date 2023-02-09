@@ -1,4 +1,6 @@
-console.log("THERES A GHOST IN THE BACKGROUND");
+// console.log("THERES A GHOST IN THE BACKGROUND");
+
+
 
 chrome.runtime.onMessage.addListener(function(message, sender, senderResponse){
   if(message.msg === "image"){ //if we're sent an img message
