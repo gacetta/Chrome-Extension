@@ -1,6 +1,6 @@
 {
-  "name": "Cursed Cursor",
-  "description": "Ghost mode",
+  "name": "Ghost Mode",
+  "description": "Spookily removes functionality from your site.  It's GHASTLY!!!",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -14,8 +14,13 @@
   }],
   "background": {
     "service_worker": "background.js"
-  }
-  ,
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
     "permissions": ["https://some-random-api.ml/"]
   
 }

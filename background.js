@@ -2,15 +2,27 @@
 
 
 
-chrome.runtime.onMessage.addListener(function(message, sender, senderResponse){
-  if(message.msg === "image"){ //if we're sent an img message
-    fetch('https://some-random-api.ml/img/red_panda')
-          .then(response => response.text())
-          .then(data => {
-            let dataObj = JSON.parse(data);
-            senderResponse({data: dataObj, index: message.index});
-          })
-          .catch(error => console.log("error", error))
-      return true;  // Will respond asynchronously.
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     console.log( "Your question was: "  + request.myQuestion );
+
+//     sendResponse({state: "I don't know, but I'll find it out!"});
+//   });
+
+chrome.runtime.onMessage.addListener(function (
+  message,
+  sender,
+  senderResponse
+) {
+  if (message.msg === "image") {
+    //if we're sent an img message
+    fetch("https://some-random-api.ml/img/red_panda")
+      .then((response) => response.text())
+      .then((data) => {
+        let dataObj = JSON.parse(data);
+        senderResponse({ data: dataObj, index: message.index });
+      })
+      .catch((error) => console.log("error", error));
+    return true; // Will respond asynchronously.
   }
-})
+});
