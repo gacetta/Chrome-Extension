@@ -1,25 +1,27 @@
 // console.log("CURSED WEBSITE INCOMING");
 let ghostModeActive = false;
 const ghostLinks = [
-  "https://y.yarn.co/7b228cf8-e86f-4421-a741-5d6442b70ffb_text.gif",
-  "https://giphy.com/clips/christinaxingfilm-hoBxuTrmBcbu32CFHW",
+  "https://giphy.com/gifs/80s-classic-beetlejuice-Eb4eRhF9zye4g/fullscreen",
   "https://giphy.com/gifs/cartoon-halloween-ghost-aTf4PONtSYB1e/fullscreen",
   "https://giphy.com/gifs/ghost-spirit-guide-very-scary-l0K4cAq6pn1jdbboI/fullscreen",
-  "https://youtu.be/GKbB9n5p-qg?t=7",
-  "https://youtu.be/9gArvGIQHdU",
   "https://ghost.org/",
-  "https://www.youtube.com/watch?v=d-MxKd1WY2k",
+  "https://giphy.com/gifs/filmeditor-christmas-movies-muppets-26uTqWF2wNac8sumk/fullscreen",
+  "https://giphy.com/gifs/ghost-2ppoYU9s6mvW8/fullscreen",
+  "https://giphy.com/gifs/animation-dog-3o6ZtrtQMscwc87A6Q/fullscreen",
+  "https://giphy.com/gifs/ghost-sunglasses-lulinternet-lw3sc1En2e8LK/fullscreen",
+  "https://giphy.com/gifs/dancing-halloween-ghost-3ov9k9vVSTn6DevZsY/fullscreen",
+  "https://giphy.com/gifs/gifoween-l2Sq6XAJ4s0WwS7wk/fullscreen",
+  "https://giphy.com/gifs/halloweenparty-halloween-party-KmKksCdjZhbvJdaVMK/fullscreen",
+  "https://giphy.com/gifs/ZurichInsurance-gifz-zgif-zgifs-plU85CCysrk8c1dgpe/fullscreen",
   "https://giphy.com/gifs/ghostbustersmovies-ghostbusters-original-3o72FiLG37hUSMqW4M/fullscreen",
   "https://www.logodesignlove.com/wp-content/uploads/2009/12/ghostbusters-logo-on-black.jpg",
   "https://en.wikipedia.org/wiki/Ghost",
-  "https://www.youtube.com/watch?v=fuZTcOyGCRY",
 ];
 const randomGhostLinkNumber = (arr) =>
   Math.floor(Math.random() * (1 + (arr.length - 1)));
 
 const ghostImages = [
   "https://www.elmers.com/on/demandware.static/-/Library-Sites-Library-elmersinternational/default/dw26a91148/Elmer%27s/01%20JAN/Featured%20Content/201669775-elmers_cheesecloth_ghosts_inline_01.jpeg",
-  "https://media.npr.org/assets/img/2017/10/18/ghost-story.jpg-7a2986c062f0a3d65ca25aed5dae223eed999602-s1100-c50.jpeg",
   "https://media.npr.org/assets/img/2017/10/18/ghost-story.jpg-7a2986c062f0a3d65ca25aed5dae223eed999602-s1100-c50.jpeg",
   "https://i.pinimg.com/736x/7a/1a/36/7a1a3699f8687e05494a928946fe8447.jpg",
   "https://pbs.twimg.com/media/CwFeYD7VUAAa8Qp.jpg",
@@ -31,8 +33,7 @@ button.addEventListener("click", () => {
   if (!ghostModeActive) {
     ghostMode();
     ghostModeActive = true;
-  } 
-  else {
+  } else {
     document.location.reload();
   }
 });
@@ -59,8 +60,7 @@ function ghostMode() {
   }
   document.getElementsByTagName("head")[0].appendChild(style);
 
-  const css2 =
-    "#ghost {animation: slideRight 10s;} @keyframes slideRight {from {left: -1000px;}to {left: 200vw;}}";
+  const css2 = `#ghost {animation: slideRight 10s;} @keyframes slideRight {from {left: -50vh;}to {left: 150vw;}}`;
   let style2 = document.createElement("style");
 
   if (style2.styleSheet) {
@@ -69,6 +69,21 @@ function ghostMode() {
     style2.appendChild(document.createTextNode(css2));
   }
   document.getElementsByTagName("head")[0].appendChild(style2);
+
+  const css3 = `@keyframes ghostify {
+    0% {opacity: 1;} 
+    30% {opacity: .8; transform: scale(4) ;} 
+    100% {opacity: 0; 
+      transform: scale(.1);
+    }}`;
+  let style3 = document.createElement("style");
+
+  if (style3.styleSheet) {
+    style3.styleSheet.cssText = css3;
+  } else {
+    style3.appendChild(document.createTextNode(css3));
+  }
+  document.getElementsByTagName("head")[0].appendChild(style3);
 
   let images = document.getElementsByTagName("img");
   for (let i = 0; i < images.length; i++) {
@@ -90,7 +105,7 @@ function ghostMode() {
     position: absolute;
     height: 50vh;
     left: -1000px;
-    top: 25vh;
+    top: 35vh;
     transition: all 13s;
     filter: invert(100%);
   `;
@@ -111,7 +126,8 @@ function ghostMode() {
       color: transparent;
       background-color: transparent;
       transition: all 2s;
-      transform: scale(10);
+      // transform: scale(10);
+      animation: ghostify 2s forwards;
       // transform: scale(${Math.floor(Math.random() * (1 + 10 - 0.1)) + 0.1});
     `;
       link.href = ghostLinks[randomGhostLinkNumber(ghostLinks)];
