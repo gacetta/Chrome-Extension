@@ -4,7 +4,6 @@ const ghostLinks = [
   "https://giphy.com/gifs/80s-classic-beetlejuice-Eb4eRhF9zye4g/fullscreen",
   "https://giphy.com/gifs/cartoon-halloween-ghost-aTf4PONtSYB1e/fullscreen",
   "https://giphy.com/gifs/ghost-spirit-guide-very-scary-l0K4cAq6pn1jdbboI/fullscreen",
-  "https://ghost.org/",
   "https://giphy.com/gifs/filmeditor-christmas-movies-muppets-26uTqWF2wNac8sumk/fullscreen",
   "https://giphy.com/gifs/ghost-2ppoYU9s6mvW8/fullscreen",
   "https://giphy.com/gifs/animation-dog-3o6ZtrtQMscwc87A6Q/fullscreen",
